@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/services.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>services</title>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="navLeftDiv">
+                <h3>Logo</h3>
+            </div>
+            <div id="navCenterDiv">
+                <ul>
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+            <div id="navRightDiv">
+                <button>
+                    <h3>Username</h3><i class="fa-solid fa-right-to-bracket"></i>
+                </button>
+                <div id="hamburgerMenu">
+                    <i class="fa-solid fa-bars" id="openSideNavigation"></i>
+                </div>
+            </div>
+        </nav>
+        <div id="mobileNavigation">
+            <i class="fa-solid fa-bars" id="closeSideNavigation"></i>
+            <ul>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section id="main">
+            <div id="left">
+                <div id="addItems">
+                    <h3>Added Items</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>S.No</th>
+                                <th>Service Name</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cartTableBody"></tbody>
+                    </table>
+                    <div class="emptyTable">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <h4>No items added</h4>
+                        <p>Add items to the cart from services bars.</p>
+                    </div>
+
+                    <div class="totalSection">
+                        <h4>Total Amount</h4>
+                        <p class="amount">&#8377;0</p>
+                    </div>
+                </div>
+                <div id="bookNow">
+                    <h3>Book Now</h3>
+
+                    <form>
+
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+                                <label for="email">Email Id</label>
+                                <input type="email" id="email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+
+                        </div>
+
+                        <button type="submit" id="bookNowBtn" disabled>Book Now</button>
+                        <div id="diabledBtnClick"><i class="fa-solid fa-circle-info"></i>
+                            <p>Add Items to the cart to book</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="right">
+                <div id="services">
+
+                    <div class="services-header">
+                        <h3>Browse Our Services</h3>
+                        <p>Click Add items to add to cart or Skip for next service.</p>
+                    </div>
+
+                    <div class="service-image">
+                        <!-- <img src="https://lavenderindia.com/public/uploads/category/879334603_18_08_2021_12_35_34.webp"
+                            alt="Dry cleaning image" > -->
+                    </div>
+
+                    <div class="service-info">
+                        <h4 class="service-name"></h4>
+                        <h4 class="service-price"></h4>
+                    </div>
+
+                    <div class="service-buttons">
+                        <button class="skip-btn">Skip</button>
+                        <button class="add-btn">Add Item</button>
+                    </div>
+
+                    <div class="service-note">
+                        <i class="fa-solid fa-circle-info"></i>
+                        <p>Add items to the cart and Book Now.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../scripts/servicesScript.js"></script>
+</body>
+
+</html>

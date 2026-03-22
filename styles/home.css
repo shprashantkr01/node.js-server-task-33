@@ -1,0 +1,315 @@
+/* ---------------- GLOBAL ---------------- */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --primary:#2EA3E6;
+  --primary-dark:#1B7CB8;
+}
+
+body{
+  font-family:"Segoe UI",system-ui,sans-serif;
+  line-height:1.5;
+}
+
+
+/* ---------------- HEADER ---------------- */
+
+.header{
+  background:aliceblue;
+}
+
+.navbar{
+  max-width:1200px;
+  margin:auto;
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 20px;
+  position:relative;
+}
+
+
+/* ---------------- SIDEBAR ---------------- */
+
+.sidebar{
+  position:fixed;
+  top:0;
+  right:0;            
+  width:50%;
+  height:100vh;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  transform:translateX(100%);
+  transition:transform .3s ease;
+  z-index:1000;
+  box-shadow:-2px 0 10px rgba(0,0,0,0.1);
+}
+
+/* toggle sidebar */
+
+#menu-toggle:checked ~ .sidebar{
+  transform:translateX(0);
+}
+
+
+/* sidebar links */
+
+.sidebar-links{
+  list-style:none;
+  text-align:center;
+}
+
+.sidebar-links li{
+  margin:25px 0;
+}
+
+.sidebar-links a{
+  text-decoration:none;
+  font-size:1.3rem;
+  color:white;
+  transition:.3s;
+}
+
+.sidebar-links a:hover{
+  color:var(--primary);
+}
+
+
+
+/* ---------------- LOGO ---------------- */
+
+.logo{
+  font-size:1.4rem;
+  font-weight:600;
+}
+
+
+/* ---------------- NAV LINKS ---------------- */
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:30px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:black;
+  font-size:1rem;
+  transition:color .3s;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+
+/* ---------------- USER BADGE ---------------- */
+
+.user p{
+  background:var(--primary);
+  color:white;
+  padding:8px 14px;
+  border-radius:8px;
+  font-size:0.9rem;
+}
+
+
+/* ---------------- HAMBURGER ---------------- */
+
+#menu-toggle{
+  display:none;
+}
+
+.hamburger{
+  display:none;
+  font-size:28px;
+  cursor:pointer;
+  position:relative;
+  z-index:1100;
+}
+
+#menu-toggle:checked ~ .hamburger{
+  color:white;
+}
+
+/* ---------------- HERO ---------------- */
+
+.hero{
+  max-width:1200px;
+  margin:auto;
+  min-height:calc(100vh - 70px);
+  display:flex;
+  align-items:center;
+  gap:40px;
+  padding:40px 20px;
+}
+
+.hero-text{
+  flex:2;
+}
+
+.hero-image{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  animation: rotateBounceSqueeze 2s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.hero-image img{
+  width:100%;
+  max-width:400px;
+}
+
+.hero-text h1{
+  font-size:2.8rem;
+}
+
+.highlight{
+  color:var(--primary);
+}
+
+.hero-text p{
+  margin-top:20px;
+  max-width:500px;
+}
+
+.hero-text button{
+  margin-top:30px;
+  padding:14px 24px;
+  border:none;
+  border-radius:8px;
+  background:var(--primary);
+  color:white;
+  font-size:1rem;
+  cursor:pointer;
+  transition:.8s;
+  animation: btnMover 3s ease 1s infinite;
+}
+
+.hero-text button:hover{
+  animation: none;
+  transform: scale(1.2) rotate(-5deg);
+  transition: ease-in-out .8s;
+}
+
+
+/* ---------------- TABLET ---------------- */
+
+@media (max-width:1024px){
+
+.hero-text{
+  flex:2;
+}
+
+.hero-image{
+  flex:1;
+}
+
+.hero-text h1{
+  font-size:2.2rem;
+}
+
+}
+
+
+/* ---------------- MOBILE ---------------- */
+
+@media (max-width:768px){
+
+/* hero layout */
+
+.hero{
+  flex-direction:column;
+  text-align:center;
+}
+
+.hero-text{
+  flex:none;
+}
+
+.hero-image{
+  flex:none;
+}
+
+/* navbar */
+
+.hamburger{
+  display:block;
+}
+
+/* hide desktop nav */
+
+.nav-links{
+  display:none;
+}
+
+/* hide user badge */
+
+.user{
+  display:none;
+}
+
+}
+
+
+/*  animations  */
+
+@keyframes rotateBounceSqueeze {
+
+
+  0%{
+    transform: translate(0,0) scale(1);
+  }
+
+  20%{
+    transform: translate(10%,0) scale(1.1);
+  }
+
+  40%{
+    transform: translate(10%,10%) scale(1.1);
+  }
+
+  60%{
+    transform: translate(0,10%) scale(1);
+  }
+
+  70%{
+    transform: scaleX(1.2) scaleY(0.8);
+  }
+
+  80%{
+    transform: scaleX(0.9) scaleY(1.1);
+  }
+
+  /* back to normal */
+
+  85%{
+    transform: scale(1);
+  }
+
+  /* pause happens here */
+
+  100%{
+    transform: scale(1);
+  }
+
+}
+
+@keyframes btnMover {
+  0%,100%{
+    transform: rotate(-5deg);
+  }
+  50%{
+    transform: rotate(5deg);
+  }
+}

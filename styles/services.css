@@ -1,0 +1,629 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*  Global Variables  */
+:root {
+    --primary-font: black;
+    --secondary-font: gray;
+    --primary-logo-blue: rgb(73, 163, 248);
+    --primary-logo-blue-hover: rgb(52, 140, 220);
+    --light-logo-blue: rgb(189, 224, 254);
+    --primary-pink: rgb(255, 175, 204);
+    --secondary-pink: rgb(251, 227, 236);
+    --primary-lightPurple: rgb(205, 180, 219);
+    --main-background-color: rgb(241, 241, 241);
+    --header-height: 100px;
+    --skip-button-text: rgb(196, 28, 90);
+}
+
+/*  Header    */
+header {
+    width: 100vw;
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+}
+
+/*  Navbar  */
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 1px 10px 0px rgb(117, 117, 117);
+}
+
+/*  Common styling for all Navbar elements  */
+nav>div {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  Logo    */
+#navLeftDiv>h3 {
+    color: var(--primary-logo-blue);
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/*  Navigation links    */
+#navCenterDiv>ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+#navCenterDiv>ul>li {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+
+}
+
+#navCenterDiv>ul>li>a {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--primary-font);
+    transition: ease-in-out 0.3s;
+}
+
+#navCenterDiv>ul>li>a:hover {
+    color: var(--primary-logo-blue);
+
+}
+
+/*  username and Logout button*/
+#navRightDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#navRightDiv>button {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+    height: 30%;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--primary-logo-blue);
+    border: none;
+    color: var(--primary-font);
+    box-shadow: 1px 1px 10px 0px rgb(117, 117, 117);
+    transition: ease-in-out 0.3s;
+}
+
+#navRightDiv>button:hover {
+    background-color: var(--primary-logo-blue-hover);
+
+}
+
+#hamburgerMenu {
+    display: none;
+}
+
+#mobileNavigation {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 260px;
+    height: 100vh;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+}
+
+/* Close button area */
+#mobileNavigation>i {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    cursor: pointer;
+    align-self: flex-end;
+}
+
+#mobileNavigation>i:hover {
+    color: var(--primary-logo-blue);
+}
+
+/* Navigation list */
+#mobileNavigation>ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* List items */
+#mobileNavigation>ul>li {
+    font-size: 1.2rem;
+}
+
+/* Links */
+#mobileNavigation>ul>li>a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+#mobileNavigation>ul>li>a:hover {
+    color: var(--primary-logo-blue);
+}
+
+
+/*  Main section    */
+main {
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    margin-top: var(--header-height);
+}
+
+#main {
+    display: flex;
+    height: 100%;
+    background-color: var(--main-background-color);
+}
+
+/*  common styling for both left and right div  */
+#main>div {
+    flex: 1;
+    display: flex;
+}
+
+/*  Left div    */
+#left {
+    flex-direction: column;
+    padding: 1%;
+    gap: 1%;
+    align-items: center;
+}
+
+/*  common styling for both cards in left main section  */
+#left>div {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* BOOK NOW CARD */
+
+#bookNow {
+    width: 50%;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Heading */
+#bookNow h3 {
+    text-align: left;
+    font-size: 1.4rem;
+    color: var(--primary-logo-blue);
+    width: 100%;
+}
+
+/* Form layout */
+#bookNow form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Field groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/* Phone + Email row */
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+/* Inputs */
+#bookNow input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 0.95rem;
+}
+
+#bookNow input:focus {
+    outline: none;
+    border-color: var(--primary-logo-blue);
+}
+
+/* Button */
+#bookNow button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: var(--primary-logo-blue);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#bookNow button:hover {
+    background-color: rgb(52, 140, 220);
+}
+
+#bookNow button:disabled {
+    background-color: var(--light-logo-blue);
+    cursor: not-allowed;
+}
+
+#bookNow button:disabled:hover {
+    background-color: var(--light-logo-blue);
+}
+
+#diabledBtnClick {
+    display: none;
+
+}
+/*  Add Items card  */
+#addItems {
+    width: 50%;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Heading */
+#addItems h3 {
+    font-size: 1.4rem;
+    color: var(--primary-logo-blue);
+}
+
+/* Table */
+#addItems table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#addItems th {
+    text-align: left;
+    padding: 10px 5px;
+    border-bottom: 1px solid #ddd;
+    font-size: 0.95rem;
+    background-color: var(--light-logo-blue);
+}
+
+#addItems td {
+    padding: 10px 5px;
+    border-bottom: 1px solid #ffffff;
+    font-size: 0.9rem;
+}
+
+#addItems tbody {
+    display: block;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Keep table header aligned */
+
+#addItems thead,
+#addItems tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#addItems table th:nth-child(1),
+#addItems table td:nth-child(1) {
+    width: 60px;
+    text-align: left;
+
+}
+
+#addItems table th:nth-child(2),
+#addItems table td:nth-child(2) {
+    width: 60%;
+    text-align: left;
+}
+
+#addItems table th:nth-child(3),
+#addItems table td:nth-child(3) {
+    width: 20%;
+    text-align: right;
+}
+
+/* Empty table message */
+
+.emptyTable {
+    width: 100%;
+    max-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+    padding: 25px 0;
+    color: var(--secondary-font);
+}
+
+.emptyTable i {
+    font-size: 1.6rem;
+    color: var(--primary-font);
+}
+
+.emptyTable h4 {
+    font-size: 1rem;
+    color: var(--primary-font)
+}
+
+.emptyTable p {
+    font-size: 0.85rem;
+}
+
+/* Total section */
+
+.totalSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #ddd;
+    padding-top: 15px;
+}
+
+.totalSection h4 {
+    font-size: 1rem;
+}
+
+.amount {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-logo-blue);
+}
+
+
+/* Right Div */
+#right {
+    padding: 1%;
+    justify-content: flex-start;
+}
+
+#services {
+    height: 100%;
+    width: 70%;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    object-fit: cover;
+}
+
+.services-header {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.services-header>h3 {
+    font-size: 1.4rem;
+    color: var(--primary-logo-blue);
+}
+
+.services-header>p {
+    font-size: 1rem;
+    color: var(--secondary-font);
+}
+
+.service-image {
+    margin-top: 25px;
+    height: 50%;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-image>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+}
+
+.service-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
+
+.service-buttons>button {
+    height: 100%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+}
+
+.skip-btn {
+    flex: 1;
+    background-color: var(--secondary-pink);
+    color: var(--skip-button-text);
+}
+
+.skip-btn:hover {
+    background-color: var(--primary-pink);
+}
+
+.add-btn {
+    flex: 3;
+    background-color: var(--primary-logo-blue);
+}
+
+.add-btn:hover {
+    background-color: var(--primary-logo-blue-hover);
+}
+
+.service-note {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--secondary-font);
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #ddd;
+}
+
+/* ===================== */
+
+@media (max-width: 1090px) {
+
+    #navCenterDiv {
+        display: none;
+    }
+
+    #hamburgerMenu {
+        display: flex;
+        cursor: pointer;
+    }
+
+    #navRightDiv {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    /* stack sections vertically */
+    #main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    /* services should appear first */
+    #right {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+        padding: 20px;
+    }
+
+    #services {
+        width: 90%;
+        height: auto;
+    }
+
+    /* left section below services */
+    #left {
+        order: 2;
+        width: 100%;
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    /* remove stretching */
+    #left>div {
+        flex: none;
+    }
+
+    /* cards side by side */
+    #addItems,
+    #bookNow {
+        width: 45%;
+    }
+}
+
+@media (max-width: 700px) {
+    #navRightDiv>button {
+        display: none;
+    }
+}
+
+
+@media (max-width:600px) {
+
+    /* stack everything vertically */
+    #left {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    #addItems,
+    #bookNow {
+        width: 90%;
+    }
+
+    #services {
+        width: 95%;
+    }
+
+    /* form fields stack */
+    .form-row {
+        flex-direction: column;
+    }
+
+    /* service buttons stack nicely */
+    .service-buttons {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .service-buttons button {
+        width: 100%;
+        height: 45px;
+    }
+
+}
