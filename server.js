@@ -23,8 +23,6 @@ const server = http.createServer((req, res) => {
         fileServer(res, path.join(__dirname, 'pages', 'home.html'), 'text/html');
     } else if (URL === '/contact') {
         fileServer(res, path.join(__dirname, 'pages', 'contactUs.html'), 'text/html');
-    } else if (URL === '/about') {
-        fileServer(res, path.join(__dirname, 'pages', 'aboutUs.html'), 'text/html');
     } else if (URL === '/services') {
         fileServer(res, path.join(__dirname, 'pages', 'services.html'), 'text/html');
     } else if (URL.startsWith('/styles/') && URL.endsWith('.css')) {
@@ -33,7 +31,18 @@ const server = http.createServer((req, res) => {
         fileServer(res, path.join(__dirname, URL), 'text/js');
     } else {
         res.writeHead(404, { 'Content-Type': 'text/html' });
-        res.end(`<h1>404 - Page Not Found</h1>`);
+        res.end(`<h1>404 - Page Not Found</h1>
+            <script>
+                let count = 3;
+                const span = document.getElementById('count');
+                setInterval(() => {
+                    count--;
+                    span.textContent = count;
+                }, 1000);
+                setTimeout(() => {
+                    window.location.href = '/home';
+                }, 3000);
+            </script>`);
     }
 });
 
